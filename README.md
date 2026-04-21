@@ -1,0 +1,19 @@
+# CS 230: Operating Platforms - Portfolio Reflection
+
+## Project Overview: The Gaming Room
+**The Gaming Room** is a fictional game development client that previously launched a successful Android-only game titled *Draw It or Lose It* (a team-based drawing and guessing game). Their core requirement was to expand this application into a cross-platform distributed environment so it could be played on Windows, macOS, Linux, and mobile web browsers. They required a system design that could scale to thousands of concurrent users while efficiently managing the memory and storage demands of a 1.6 GB library of high-definition image assets used during fast-paced, 1-minute game rounds. 
+
+## Strengths in Documentation
+In developing the Software Design Document, I excelled at translating highly technical system requirements into clear, justifiable business recommendations for the client. Specifically, my evaluation of operating platforms (recommending a monolithic Linux kernel for scalable backend hosting) and my detailed breakdown of resource management (recommending a hybrid storage approach utilizing cloud object storage and a CDN) clearly aligned the system's architecture with the client's goal of a seamless, cross-platform user experience.
+
+## The Value of Design Before Code
+Working through the design document prior to heavy development was incredibly helpful because it acted as a strict architectural blueprint. By formally defining the client-server pattern and mapping out the RESTful API endpoints beforehand, the actual implementation of the backend code (such as configuring the Java controllers and authentication routes) was significantly smoother. It prevented scope creep and ensured I knew exactly how the data needed to flow between the distributed systems before writing a single line of logic.
+
+## Areas for Revision
+If I could choose one part of the documentation to revise, I would expand upon the visual diagrams, particularly by adding sequence diagrams for the security and authentication flows. While the written recommendations regarding Role-Based Access Control (RBAC) and JSON Web Tokens (JWT) are strong, visually mapping out the exact lifecycle of a token between the client browser and the Linux server would make the documentation even more robust and developer-friendly for future teams taking over the codebase.
+
+## Interpreting and Implementing User Needs
+I interpreted the user’s needs by focusing heavily on the end-user's gameplay experience—specifically the requirement that 8 MB images must render rapidly without stuttering or crashing the browser during a live match. I implemented this into the design by prioritizing "lazy loading" in the memory management section and leveraging decentralized storage. Considering user needs during the design phase is paramount because a technically sound backend is ultimately useless if the client-side application suffers from latency, memory leaks, or a poor cross-platform interface that drives players away.
+
+## Future Approaches to Software Design
+I approached designing this software using a top-down, systems-thinking strategy: I started with the broadest architectural pattern (the distributed client-server model) and progressively narrowed down into platform-specific constraints like Linux file systems, memory paging, and TLS encryption. In the future, I will continue to use this modular approach to analyze applications. I also plan to integrate threat modeling much earlier in the design phase, ensuring that security architectures (like Zero Trust and endpoint rate-limiting) are foundational pillars rather than afterthoughts.
