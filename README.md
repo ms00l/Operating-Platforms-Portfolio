@@ -1,4 +1,4 @@
-# CS 230: Operating Platforms - Portfolio Reflection
+# CS 230: Operating Platforms - Portfolio
 
 ## Project Overview: The Gaming Room
 **The Gaming Room** is a fictional game development client that previously launched a successful Android-only game titled *Draw It or Lose It* (a team-based drawing and guessing game). Their core requirement was to expand this application into a cross-platform distributed environment so it could be played on Windows, macOS, Linux, and mobile web browsers. They required a system design that could scale to thousands of concurrent users while efficiently managing the memory and storage demands of a 1.6 GB library of high-definition image assets used during fast-paced, 1-minute game rounds. 
